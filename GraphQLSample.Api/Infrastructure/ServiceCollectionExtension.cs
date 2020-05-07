@@ -35,6 +35,8 @@ namespace GraphQLSample.Api.Infrastructure
             .AddScoped<GraphQueries>()
             .AddScoped<UserQuery>()
             .AddScoped<UserType>()
+            .AddScoped<BookType>()
+            .AddScoped<BookInputType>()
             .AddScoped<UserInputType>()
             .AddScoped<UserMutation>()
             .AddInfrastructureServices()

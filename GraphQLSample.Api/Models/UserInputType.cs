@@ -15,7 +15,6 @@ namespace GraphQLSample.Api.Models
                 "weightLbs",
                 resolve: ctx => Convert.ToDecimal(ctx));
             Field<DateGraphType>("birthday");
-            Field<ObjectGraphType>("books");
         }
     }
 }

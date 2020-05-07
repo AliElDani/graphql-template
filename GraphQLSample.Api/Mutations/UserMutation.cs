@@ -21,6 +21,21 @@ namespace GraphQLSample.Api.Mutations
 
                   return mediator.Send(new CreateUser(dto.FirstName, dto.LastName, dto.Email, dto.WeightLbs, dto.Birthday)).Result;
               });
+
+            Field<UserType>(
+              "readBook",
+              arguments: new QueryArguments(
+              new QueryArgument<IntGraphType> { Name = "id" },
+               new QueryArgument<NonNullGraphType<BookInputType>> { Name = "book" }
+              ),
+              resolve: context =>
+              {
+                  var id = context.GetArgument("id", -1);
+                  if (id == -1) return null;
+
+                  var dto = context.GetArgument<BookDto>("book");
+                  return mediator.Send(new ReadBook(id, dto.Title, dto.Author)).Result;
+              });
         }
     }
 }

@@ -34,5 +34,10 @@ namespace GraphQLSample.Core.Domains
             WeightLbs = weightLbs;
             Birthday = birthday;
         }
+
+        public void BookRead(Book book)
+        {
+            _books.Add(book);
+        }
     }
 }
