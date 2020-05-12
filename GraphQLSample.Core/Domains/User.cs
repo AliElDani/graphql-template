@@ -35,7 +35,7 @@ namespace GraphQLSample.Core.Domains
             Birthday = birthday;
         }
 
-        public void BookRead(Book book)
+        public void ReadBook(Book book)
         {
             _books.Add(book);
         }

@@ -25,8 +25,8 @@ namespace GraphQLSample.Api.Mutations
             Field<UserType>(
               "readBook",
               arguments: new QueryArguments(
-              new QueryArgument<IntGraphType> { Name = "id" },
-               new QueryArgument<NonNullGraphType<BookInputType>> { Name = "book" }
+                new QueryArgument<IntGraphType> { Name = "id" },
+                new QueryArgument<NonNullGraphType<BookInputType>> { Name = "book" }
               ),
               resolve: context =>
               {

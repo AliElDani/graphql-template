@@ -2,6 +2,7 @@
 using GraphQLSample.Api.Models;
 using GraphQLSample.Core;
 using GraphQLSample.Core.Domains;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace GraphQLSample.Api.Queries
@@ -20,7 +21,7 @@ namespace GraphQLSample.Api.Queries
             Field<ListGraphType<UserType>>(
                 "users",
                 resolve: context => 
-                    repository.GetAll<User>());
+                    repository.GetAll<User>().Include(u=> u.Books));
         }
     }
 }

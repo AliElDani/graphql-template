@@ -22,7 +22,7 @@ namespace GraphQLSample.Core.Handlers
                 var user = _repository.GetById<int, User>(request.UserId);
                 if (user == null) return null;
 
-                user.BookRead(new Book(request.Title, request.Author));
+                user.ReadBook(new Book(request.Title, request.Author));
                 scope.Commit();
                 return user;
             }
